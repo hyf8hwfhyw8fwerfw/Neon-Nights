@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cyberpunk Game - Neon Nights</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: 'Orbitron', sans-serif;
+    color: #00fff7;
+    overflow-x: hidden;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0a0a0acc;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    box-shadow: 0 0 15px #00fff7aa;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    gap: 30px;
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: #00fff7;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-shadow:
+      0 0 5px #00fff7,
+      0 0 10px #00fff7,
+      0 0 20px #00fff7,
+      0 0 40px #00fff7;
+  }
+  nav button:hover,
+  nav button.active {
+    background: #00fff7aa;
+    color: #000;
+    box-shadow:
+      0 0 15px #00fff7,
+      0 0 30px #00fff7;
+  }
+
+  main {
+    padding: 100px 20px 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1, h2 {
+    text-align: center;
+    text-shadow:
+      0 0 8px #00fff7,
+      0 0 16px #00fff7,
+      0 0 32px #00fff7;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 0 0 3px #00fff7aa;
+  }
+
+  /* Glow boxes */
+  .glow-box {
+    background: #11111a;
+    border: 1px solid #00fff7aa;
+    box-shadow:
+      0 0 10px #00fff7,
+      inset 0 0 20px #00fff7;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Gloom effect behind the box */
+  .gloom {
+    position: relative;
+  }
+  .gloom::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: #00fff7;
+    filter: blur(60px);
+    opacity: 0.15;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    color: #00fff7aa;
+    padding: 20px 0;
+    text-shadow: 0 0 5px #00fff7;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      gap: 12px;
+    }
+    nav button {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+    main {
+      padding: 90px 10px 20px 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <button data-page="home" class="active">Home</button>
+    <button data-page="story">Story</button>
+    <button data-page="characters">Characters</button>
+    <button data-page="gameplay">Gameplay</button>
+    <button data-page="contact">Contact</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="page gloom glow-box">
+    <h1>Neon Nights</h1>
+    <p>Welcome to <strong>Neon Nights</strong>, a thrilling cyberpunk adventure set in a sprawling futuristic metropolis glowing with neon lights and danger lurking around every corner.</p>
+    <p>Experience a world where technology meets rebellion, and your choices shape the fate of the city.</p>
+  </section>
+
+  <section id="story" class="page gloom glow-box" style="display:none;">
+    <h2>The Story</h2>
+    <p>In the year 2147, the megacorporations control everything. You play as a renegade hacker aiming to take down the corrupt elite and uncover hidden secrets buried deep beneath the city’s neon haze.</p>
+    <p>Navigate dark alleys, neon-lit skyscrapers, and underground networks to rewrite the future.</p>
+  </section>
+
+  <section id="characters" class="page gloom glow-box" style="display:none;">
+    <h2>Characters</h2>
+    <p><strong>Vex:</strong> The cunning hacker with a mysterious past.</p>
+    <p><strong>Echo:</strong> A street-smart mercenary skilled with cybernetic implants.</p>
+    <p><strong>Neon:</strong> The enigmatic AI guiding you through the city’s secrets.</p>
+  </section>
+
+  <section id="gameplay" class="page gloom glow-box" style="display:none;">
+    <h2>Gameplay</h2>
+    <p>Explore a dynamic open world filled with hacking challenges, stealth missions, and combat encounters. Customize your cybernetic abilities and upgrade your gear to gain the edge against your enemies.</p>
+    <p>Choose your path carefully, as every decision impacts the city and your allies.</p>
+  </section>
+
+  <section id="contact" class="page gloom glow-box" style="display:none;">
+    <h2>Contact Us</h2>
+    <p>Questions? Feedback? Reach out to the Neon Nights team via email at <a href="mailto:support@neonnights.game" style="color:#00fff7;">support@neonnights.game</a></p>
+    <p>Follow us on social media for updates, giveaways, and more!</p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Neon Nights. All rights reserved.
+</footer>
+
+<script>
+  const navButtons = document.querySelectorAll('nav button');
+  const pages = document.querySelectorAll('.page');
+
+  navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      navButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const targetPage = button.getAttribute('data-page');
+      pages.forEach(page => {
+        if (page.id === targetPage) {
+          page.style.display = 'block';
+        } else {
+          page.style.display = 'none';
+        }
+      });
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
